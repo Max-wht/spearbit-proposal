@@ -13,14 +13,14 @@ the dos attack in blockchain is to stop smart contrack from working, break the f
 there are few aspects:
 
   ## 1 Depend on an owner
-  
+
   ownership is a privilege. The owner can have special privileges within the contract. These privileges can also originate from other contract.
   - ERC20: USDC has a blackList to denail transfer
 
   ## 2 Depend on External call
 
   This function relies on an external call. If the external call reverts, the entire transaction will revert. Therefore, the external contract must be trusted.
-  
+
   Some contract will naively think that some of the address is EOA. Every call should be checked.
 
   **In Transaction Scenario**, their is a patern call `pull-base`
@@ -72,3 +72,14 @@ there are few aspects:
     ... 
   }
   ```
+
+  # Consistency
+
+  Most Vulnerabilities are rooted in consistency issue within the system's logic.
+  There are some things SR have to check:
+
+  ## 1 another contract data structure and function
+  - constraints are inconsistent
+  - key fields check
+  
+
